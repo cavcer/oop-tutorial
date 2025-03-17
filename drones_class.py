@@ -4,7 +4,7 @@ class IHA:
 
     def get_name(self):
         print(self.name)
-        
+
     def arm(self):
         print("Drone armed.")
 
@@ -44,8 +44,10 @@ kamikaze = KamikazeDrone("kento")
 kaşifdrone = KeşifDrone("kaşif")
 VTOL = VTOL("Pasific")
 
-print(kamikaze.name)
-print(kaşifdrone.name)
+kamikaze.get_name()
+kaşifdrone.get_name()
+VTOL.get_name()
+
 
 kamikaze.arm()
 kamikaze.execute()
