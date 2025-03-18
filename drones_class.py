@@ -100,4 +100,4 @@ kamikaze.get_gps()
 
 #print(VTOL.battery)
 print(VTOL.name)
-print(VTOL.gps)
+print(VTOL.__gps)
