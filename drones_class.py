@@ -1,11 +1,20 @@
 from abc import ABC, abstractmethod
 
 class IHA(ABC):
-    def __init__(self,name):
+    def __init__(self,name, battery, gps):
         self.name = name
+        self._battery = battery #protected
+        self.__gps = gps  #priviate
 
     def get_name(self):
         print(self.name)
+
+    def get_battery(self):
+        print(self._battery)
+
+    def get_gps(self):
+        if self.__gps:
+            print("gps var")
 
     @abstractmethod
     def arm(self):
@@ -67,9 +76,9 @@ class VTOL(IHA):
         print("VTOL armed")
 
 
-kamikaze = KamikazeDrone("kento")
-kaşifdrone = KeşifDrone("kaşif")
-VTOL = VTOL("Pasific")
+kamikaze = KamikazeDrone("kento",7,True)
+kaşifdrone = KeşifDrone("kaşif",5,False)
+VTOL = VTOL("Pasific",8,True)
 
 kamikaze.get_name()
 kaşifdrone.get_name()
@@ -85,7 +94,10 @@ kaşifdrone.search()
 
 VTOL.takeoff(10)
 VTOL.release_kamikaze(3)
-    
 
+kaşifdrone.get_battery()
+kamikaze.get_gps()
 
-
+#print(VTOL.battery)
+print(VTOL.name)
+print(VTOL.gps)
