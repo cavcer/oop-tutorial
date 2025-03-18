@@ -1,6 +1,6 @@
 class Environment:
 
-    def __init__(self,drone_list)
+    def __init__(self,drone_list):
         self.drone_list = []
 
     def add_drone(self, drone, drone_list):
